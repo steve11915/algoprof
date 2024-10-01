@@ -35,12 +35,23 @@ def run_model(data):
     
     return accuracy, prediction, feature_importance
 
-st.title('ALGO_PROF - light')
+st.title('ALGO_PROF')
 
 ticker = st.text_input('Enter a ticker symbol:', 'AAPL')
 
-period_options = ['6mo']
-selected_period = st.selectbox('Select data range (to view longer period(~max), use premium version!):', period_options)
+period_options = ['6mo', '1y', '2y', '5y', '10y', 'ytd', 'max']
+free_options = ['6mo']
+premium_options = ['1y', '2y', '5y', '10y', 'ytd', 'max']
+
+selected_period = st.selectbox(
+    'Select data range:',
+    period_options,
+    format_func=lambda x: f"{x} {'(Premium)' if x in premium_options else ''}"
+)
+
+if selected_period in premium_options:
+    st.warning("This is a premium feature. Please upgrade to access this data range.")
+    st.stop()
 
 if st.button('Predict'):
     st.write(f"Processing {ticker} for {selected_period}...")
@@ -66,3 +77,6 @@ st.sidebar.info("This app uses a Machine Learning model to predict whether a sto
 
 st.sidebar.title("Disclaimer")
 st.sidebar.warning("This app is for educational purposes only. It is not financial advice and should not be used as the basis for any financial decisions.")
+
+st.sidebar.title("Premium Features")
+st.sidebar.info("Upgrade to access extended data ranges: 1y, 2y, 5y, 10y, and ytd.")
