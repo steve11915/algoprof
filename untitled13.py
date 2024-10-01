@@ -38,7 +38,7 @@ def run_model(data):
     return accuracy, prediction, feature_importance
 
 # Streamlit app
-st.title('Stock Prediction App')
+st.title('ALGO_PROF')
 
 # User input
 ticker = st.text_input('Enter a ticker symbol:', 'AAPL')
@@ -82,7 +82,7 @@ if st.button('Predict'):
 
 # Add some information about the app
 st.sidebar.title("About")
-st.sidebar.info("This app uses a Random Forest model to predict whether a stock's price will increase or decrease based on historical data. The model's accuracy is based on past performance and does not guarantee future results. Always do your own research before making investment decisions.")
+st.sidebar.info("This app uses a Machine Learning model to predict whether a stock's price will increase or decrease based on historical data. The model's accuracy is based on past performance and does not guarantee future results. Always do your own research before making investment decisions.")
 
 # Add a disclaimer
 st.sidebar.title("Disclaimer")
