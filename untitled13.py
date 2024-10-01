@@ -39,7 +39,7 @@ st.title('ALGO_PROF')
 
 ticker = st.text_input('Enter a ticker symbol:', 'AAPL')
 
-period_options = ['1d', '5d', '1mo', '3mo', '6mo', '1y', '2y', '5y', '10y', 'ytd', 'max']
+period_options = ['6mo', '1y', '2y', '5y', '10y', 'ytd', 'max']
 selected_period = st.selectbox('Select data range:', period_options)
 
 if st.button('Predict'):
