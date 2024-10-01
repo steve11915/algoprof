@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Oct  1 16:54:40 2024
+
+@author: Cell Physiology
+"""
+
+streamlit
+yfinance
+scikit-learn
+pandas
