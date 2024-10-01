@@ -35,7 +35,7 @@ def run_model(data):
     
     return accuracy, prediction, feature_importance
 
-st.title('ALGO_PROF')
+st.title('ALGO_PROF - light')
 
 ticker = st.text_input('Enter a ticker symbol:', 'AAPL')
 
